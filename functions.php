@@ -44,6 +44,7 @@ function twentyten_setup() {
 	add_image_size( 'slider-testimonial', 120, 60, true );
 	add_image_size( 'insurer-button', 280, 145, true );
 	add_image_size( 'board-members', 216, 316, true );
+	add_image_size( 'partners', 149, 138, true );
 	}
 
 	// Add default posts and comments RSS feed links to head
