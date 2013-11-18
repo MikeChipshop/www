@@ -26,10 +26,8 @@
                     <?php endwhile; ?>
                     <?php }; ?>
 					<div class=" grid_4 omega two clearfix">
-						<h5>How we work</h5>
-						<p>We match innovative businesses seeking to raise finance for growth with private investors looking for new opportunities. Investment may come from a single investment or as a group of investors working together.  The funds secured through private investment are matched with funding through New Anglia LEP.  This means the risk is spread between public and private finance. It also means that we have created a very attractive investment package to stimulate growth and jobs in the region.</p>
-						<p>We source businesses looking to raise finance and present opportunities that we think will be attractive to investors.</p>
-						<p>Visit the latest <a href="opportunities.php">business opportunites</a></p>
+						<h5><?php the_field('about_column_title'); ?></h5>
+						<?php the_field('about_column_two'); ?>
 					</div>
 					<div class=" grid_4 omega three clearfix"><img src="img/about_diagram.gif"></div>
 
