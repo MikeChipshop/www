@@ -19,35 +19,21 @@
                 <?php endwhile; ?>
 		<?php }; ?>
 				<div id="partners" class="group">
-					<div class="col">
-						<img src="img/no_image.jpg">
-						<h4>Eastern Enterprise Hub</h4>
-						<h6><a href="http://www.eehub.co.uk/">www.eehub.co.uk</a></h6>
-						<p>Some early stage businesses need support to become investment ready. We have links with a rang eof partners who are able to assist early stage businesses.</p>
+                	<?php if(get_field('partners')): $rcount = 1; ?>
+					<?php while(has_sub_field('partners')): ?>
+					<div class="col partner-item-<?php echo $rcount; ?>">
+						<?php 
+						$attachment_id = get_sub_field('partner_image');
+						$size = "board-members";
+						$image = wp_get_attachment_image_src( $attachment_id, $size );
+						?>
+						<img src="<?php echo $image[0]; ?>" />
+						<h4><?php the_sub_field('partner_title'); ?></h4>
+						<h6><a href="http://<?php the_sub_field('partner_link'); ?>"><?php the_sub_field('partner_link'); ?></a></h6>
+						<?php the_sub_field('partner_content'); ?>
 					</div>
-					<div class="col">
-						<img src="img/no_image.jpg">
-						<h4>NWES</h4>
-						<h6><a href="http://www.nwes.org.uk/">www.nwes.org.uk</a></h6>
-						<p>Some early stage businesses need support to become investment ready. We have links with a rang eof partners who are able to assist early stage businesses.</p>
-					</div>
-					<div class="col">
-						<img src="img/no_image.jpg">
-						<h4>MENTA</h4>
-						<h6><a href="http://www.menta.org.uk/">www.menta.org.uk</a></h6>
-
-						<p>Some early stage businesses need support to become investment ready. We have links with a rang eof partners who are able to assist early stage businesses.</p>
-					</div>
-					<div class="col">
-						<img src="img/no_image.jpg">
-						<h4>NAC</h4>
-						<h6><a href="http://www.newangliacapital.co.uk/">www.newangliacapital.co.uk</a></h6>
-						<p>Some early stage businesses need support to become investment ready. We have links with a rang eof partners who are able to assist early stage businesses.</p>
-					</div>					
-
-					
-					
-					
+                    <?php $rcount++; endwhile;?>
+					<?php endif; ?>
 				</div>
 			</div>
 			</div>
