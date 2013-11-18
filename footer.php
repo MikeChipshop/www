@@ -88,4 +88,5 @@ $newpost_query->the_post();
 </footer>
 <?php wp_footer(); ?>
 </body>
+<!-- Test GIT -->
 </html>
