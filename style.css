@@ -1,0 +1,1302 @@
+/*
+Theme Name: NAC 
+Theme URI: http://www.newangliacapital.co.uk
+Description: A custom wordpress theme built for New Anglia Capital 
+Author: Jason Hegarty (jheg), Mike Bishop (Miniman Webdesign)
+Author URI: http://thewebdesignforum.co.uk/user/4-jheg/
+Version: 1.0
+Tags: responsive, custom-post-types, custom-fields
+
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+/*
+
+Copyright 2013 jheg/Miniman WebDesign. All Rights Reserved.
+
+*/
+ /* ------------------------------------------------
+CONTENTS:
+-HTML5 Reset,
+-TYPOGRAPHY,
+-HEAD SECTION,
+--LOGO,
+--NAVIGATION,
+----TOP NAV,
+----SECONDARY NAV,
+----FOOTER NAV,
+-BANNER AREA,
+-MAIN CONTENT AREA,
+-FOOTER AREA ONE,
+--TESTIMONIALS--NEWS,
+-FOOTER AREA TWO,
+-FORMS,
+
+-MEDIA QUERIES,
+--Min Width 600px,
+--Min Width 700px,
+--Min Width 850px,
+------------------------------------------------ */
+/* ------------------------------------------------
+HTML5 Reset
+------------------------------------------------ */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,
+legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{border:0;font-family:inherit;font-size:100%;
+font-style:inherit;font-weight:inherit;margin:0;outline:0;padding:0;vertical-align: baseline}:focus{/* remember to define focus styles! */outline:0}body{background:#fff;line-height:1}ol,ul{list-style: none}
+table{/* tables still need 'cellspacing="0"' in the markup */border-collapse:separate;border-spacing:0}caption,th,td{font-weight:normal;text-align:left}blockquote:before,blockquote:after,q:before,q:after{content: ""}
+blockquote,q{quotes: "" ""}a img{border: 0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display: block}.clear{clear:both}.clearfix:after{content:".";visibility:hidden;display:block;height:0;
+clear:both}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}strong{font-weight:bold;}em{font-style:italic}del{text-decoration: line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+
+*, *:before, *:after{
+-webkit-transition: color .25s ease,background-color .25s ease,border-color .25s ease,opacity .5s ease;
+-moz-transition: color .25s ease,background-color .25s ease,border-color .25s ease,opacity .5s ease;
+-ms-transition: color .25s ease,background-color .25s ease,border-color .25s ease,opacity .5s ease;
+-o-transition: color .25s ease,background-color .25s ease,border-color .25s ease,opacity .5s ease;
+transition: color .25s ease,background-color .25s ease,border-color .25s ease,opacity .5s ease;}
+
+/* ------------------------------------------------
+TYPOGRAPHY
+-------------------------------------------------*/
+body{
+font-family: Helvetica, Arial, sans-serif;
+background-color: #A7A9AB;
+font-size: 100%;
+}
+.bold{
+font-weight: bold;
+}
+a,
+a:visited,
+a:hover,
+a:active{
+	color: #E72348;
+	text-decoration: none;
+}
+/*-------------------------------------------------
+HEAD SECTION
+-------------------------------------------------*/
+hgroup{
+min-height: 120px;
+overflow: hidden;
+}
+/*-------------------------------------------------
+--LOGO
+-------------------------------------------------*/
+hgroup img.logo{
+min-width: 140px;
+width: 30%;
+max-width: 50%;
+margin: 10px 0 0 20px;
+
+}
+.logo_container{
+width: 100%;
+overflow: hidden;
+margin: 0;
+}
+/* ------------------------------------------------
+--NAVIGATION
+-------------------------------------------------*/
+nav a, .nav_sub nav span{
+cursor: pointer;
+text-decoration: none;
+font-family: Helvetica;
+font-weight: bold;
+}
+/*-------------------------------------------------
+----top nav (nav_top)
+-------------------------------------------------*/
+.nav_top.grid_8{
+width: 100%;
+}
+.nav_top nav{
+padding-bottom: 21px;
+}
+.nav_top nav a{
+color: white;
+background-color: #728686;
+-webkit-border-top-right-radius: 15px;
+-moz-border-top-right-radius: 15px;
+border-top-right-radius: 15px;
+line-height: 1.25em;
+padding: 10px 0 0 5%;
+font-weight: normal;
+width: 43.5%;
+height: 70px;
+float: left;
+margin-bottom: 2.5%;
+text-align: left;
+}
+
+.nav_top nav ul li:nth-child(odd) a{margin-left: 1%; margin-right: 0.5%;}
+.nav_top nav ul li:nth-child(even) a{margin-left: 0.5%;}
+
+.nav_top nav a:hover{
+background-color: #E72348;	
+}
+/*-------------------------------------------------
+----secondary nav (nav_sub) --footer nav (footernav)
+-------------------------------------------------*/
+#resp_nav{
+	position: relative;
+	background-color: #fff;
+	padding: 1%;
+	width: 98%;
+
+}
+	#resp_nav > a{
+		width: 3.125em;
+		height: 3.125em;
+
+		text-align: left;
+		text-indent: -9999px;
+		background-color: #E72348;
+		position: relative;
+		display: none;
+	}
+		#resp_nav > a:before,
+		#resp_nav > a:after{
+			position: absolute;
+			border: 2px solid #f7f7f7;
+			top: 35%;
+			left: 25%;
+			right: 25%;
+			content: '';
+		}
+		#resp_nav > a:after{
+			top: 60%;
+		}
+	#resp_nav:not( :target ) > a:first-of-type,
+	#resp_nav:target > a:last-of-type{
+		display: block;
+	}
+/* first level */
+#resp_nav > ul{
+	height: auto;
+	width: 100%;
+	background-color: rgba(256,256,256,1);
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+
+}
+	#resp_nav > ul > li > a{
+	display: block;
+	height: 100%;
+	font-size: 1em;
+	line-height: 2em;
+	text-align: center;
+	padding: 0 10px;
+	}
+	#resp_nav:target > ul{
+		display: block;
+	}
+	#resp_nav > ul.active{
+		display: block;
+	}
+	#resp_nav > ul > li{
+		width: 100%;
+		float: none;
+	}
+/* second level */
+#resp_nav li ul{
+	display: none;
+	top: 100%;
+	background-color: rgba(256,256,256,1);
+}
+	#resp_nav li ul{
+		position: static;
+	}
+	#resp_nav li ul li{width: 100%; }
+	#resp_nav li > ul > li > a{
+		display: block;
+		height: 100%;
+		font-size: 1em;
+		line-height: 2em;
+		text-align: center;
+		padding: 0 20px;
+	}
+	#resp_nav ul li a:hover{
+		color: #333;
+	}
+	#resp_nav li:hover ul{
+		display: block;
+		right: 0px;
+		font-size: 1em;
+		line-height: 2em;
+		
+	}
+.grid_6.footernav{
+width: 100%;
+}
+.footernav nav a{
+color: #E72348;
+width: 50%;
+-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+box-sizing: border-box;         /* Opera/IE 8+ */
+text-align: center;
+display: block;
+float: left;
+line-height: 40px;
+}
+.footernav nav ul li:nth-child(odd) a{
+border-right: solid 1px #222;
+}
+
+.footernav nav a:hover{
+color: #222;	
+}
+
+/*-------------------------------------------------
+----footer nav
+-------------------------------------------------*/
+
+/*-------------------------------------------------
+BANNER AREA
+-------------------------------------------------*/
+#banner{
+overflow: hidden;
+padding: 0 0;
+text-align: center;
+background-color: #8BBAC7;
+
+}
+.grey#banner{
+background-color: #4D4D4E;
+}
+.no_image{
+height: 100px;
+}
+#banner .grid_6{
+width: 100%;
+}
+#banner img{
+max-width: 100%;
+overflow: hidden;
+display: block;
+}
+#banner-info.grid_6{
+margin-top: 2%;
+}
+#banner-info h1{
+font-size: 1.5em;
+line-height: 1.25em;
+color: #E72348;
+margin-top: 40px;
+}
+#banner-info p{
+font-size: 1.25em;
+line-height: 1.5em;
+color: #fff;
+}
+/*-------------------------------------------------
+MAIN CONTENT AREA
+-------------------------------------------------*/
+.content{
+background-color: #333;
+border-top: 10px solid black;
+padding-bottom: 40px;
+}
+.content .grid_4, 
+.content .grid_8{
+width: 100%;
+border-top: 1px solid white;
+padding: 5% 0;
+}
+.content h5{
+color: white;
+padding: 3% 0 0 5%;
+font-size: 1.5em;
+line-height: 1.5em;
+}
+.content .one h5,
+.content .two h5,
+.content .three h5{
+padding: 0 0 5% 15%;
+}
+.content p{
+padding: 5% 10% 0 15%;
+color: white;
+line-height: 1.7em;
+font-size: 0.75em;
+}
+.content .grid_4.three{
+text-align: center;
+
+}
+.content .grid_4.three img{
+margin-top: 10%;
+min-width: 200px;
+margin-left: 6%;
+width: 20%;
+max-width: 40%;
+}
+.steps p{
+float: left;
+padding: 0;
+margin: 0;
+}
+.seeking .steps{float: left; margin:0;}
+.seeking .steps .grid_4,
+.seeking .steps .grid_8{
+padding: 0 0;
+}
+.seeking .steps .grid_4 p{padding:1% 0 0 50%; margin: 0; color: red; font-size: 5em; line-height: 1em;}
+.seeking .steps .grid_8 p{float: left; margin: 0; padding: 1% 30% 0 0;}
+/*-------------------------------------------------
+seeking-investment page
+-------------------------------------------------*/
+.content .how_to_apply{
+padding-top: 0;
+}
+.content .how_to_apply p{
+padding-top: 5%;
+}
+.how_to_apply p span{
+font-size: 1.25em;
+color: #8BBAC7;
+}
+.content p.how_to_p{
+font-size: 1.1em;
+font-weight: bold;
+padding-top: 2%;
+}
+/*-------------------------------------------------
+opportunities page
+-------------------------------------------------*/
+
+.opportunity{
+width: 80%;
+margin-left: 10%;
+margin-bottom: 20px;
+background-color: #f7f7f7;
+color: black;
+float: left;
+}
+.opportunity_container{
+padding: 3% 0;
+overflow: auto;
+
+}
+.opportunity_container img{
+width: 20%;
+float: left;
+padding: 3%;
+border-right: 1px #E72348 solid;
+
+
+}
+.right{
+width: 50%;
+float: left;
+padding: 1% 5% 0 5%;
+}
+.opportunity_container .right h5, .single_opp h5{	
+color: #E72348;
+font-size: 1.1em;
+padding: 0;
+}
+.opportunity_container .right p{
+color: #333;
+line-height: 1.35em;
+width: 100%;
+padding: 0;
+}
+.opportunity_container .right span a, span.read_more a{
+color: #E72348;
+font-size: 0.75em;
+font-weight: bold;
+text-decoration: underline;
+}
+/*-------------------------------------------------
+single opportunity page
+-------------------------------------------------*/
+.single_opp .grid_10{
+background-color: #f7f7f7;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+margin-bottom: 0;
+}
+.single_opp .grid_2{
+	float: right;
+	width: 30%;
+}
+.single_opp .grid_10 a{
+text-align: left;
+text-decoration: underline;
+color: #333;
+font-size: 0.75em;
+font-weight: bold;
+}
+.single_opp img{
+margin: 3% 3% 1% 4%;
+padding: 1% 1% 1% 1%;
+width: 50%;
+max-width: 150px;
+border: 1px solid #666;
+float: left;
+}
+.single_opp h5{
+margin-left: 5%;
+}
+.single_opp h6{
+margin-left: 5%;
+margin-top: 15px;
+color: #333;
+font-weight: bold;
+font-size: 0.8em;	
+}
+.single_opp p{
+padding: 5px 5% 2% 5%;
+margin: 0;
+color: #666;
+}
+/*-------------------------------------------------
+investors page
+-------------------------------------------------*/
+.content.investors .grid_4.three img{
+padding: 5%;
+background-color: white;
+min-width: 150px;
+}
+.content.investors .grid_4.three{
+margin-top: 7%;
+}
+/*-------------------------------------------------
+events page & news page
+-------------------------------------------------*/
+.event, .news{
+width: 90%;
+margin: 3% 0 0 5%;
+overflow: auto;
+border-bottom: 1px #f7f7f7 solid;
+}
+.event h6 a, .news h6 a, .single_event h6{
+text-decoration: none;
+margin: 0 0 1% 0;
+color: #8BBAC7;
+font-weight: bold;
+font-size: 1em;
+}
+.event span.date, .news span.date, .single_event span.date{
+color: #E72348;
+margin:0 0 1% 0;
+font-weight: bold;
+font-size: 0.85em;
+}
+.event_content.grid_6, .news_content.grid_6{
+width: 100%;
+}
+.event .event_content p, .news .news_content p{
+width: 100%;
+margin: 0;
+padding: 0;
+line-height: 1.25em;
+margin-top: 2%;
+}
+.event_image, .news_image{
+text-align: right;
+min-width: 140px;
+}
+.event_image img, .news_image img{
+max-width: 120px;
+display: none;
+}
+/*-------------------------------------------------
+single event page, single news page
+-------------------------------------------------*/
+.single_event .grid_4{
+	border-top: none;
+}
+.single_event .grid_8{
+	padding: 0;
+	border-top: none;
+	text-align: center;
+}
+.single_event .grid_8 img{
+	padding: 5%;
+}
+.single_event h6{
+	padding: 0 0 0 15%;
+}
+.single_event .grid_2{
+	width: 100%;
+}
+.single_event .grid_2 a{
+	color: #f7f7f7;
+	text-decoration: underline;
+	margin-left: 15%;
+}
+.single_event .grid_2 a:hover{
+	color: #E72348;
+}
+/*-------------------------------------------------
+contact page
+-------------------------------------------------*/
+.content.contact h5,
+.content.contact h6{
+padding: 0;
+font-weight: bold;
+}
+.content.contact h6{
+margin-top: 2%;
+}
+.content.contact .grid_5{
+	width: 100%;
+}
+.content.contact form{
+width: 90%;
+max-width: 400px;
+}
+.contact form th{
+vertical-align: middle;
+}
+.content.contact{
+color: white;
+}
+.content address{
+line-height: 1.5em;
+font-size: 0.75em;
+}
+.content.contact p{
+padding: 0;
+line-height: 1.5em;
+}
+.content.contact a{
+color: white;
+text-decoration: none;
+}
+.content.contact form td{
+padding-left: 10px;
+}
+.contact form table{
+width: 100%;
+}
+.contact table th,
+.contact table td{
+clear: both;
+}
+.content.contact td select, 
+.content.contact td input, 
+.content.contact td textarea{
+	width: 90%;
+} 
+.contact span{
+color: #E72348;
+}
+input.btn{
+	max-width: 100px;
+}
+/*-------------------------------------------------
+team page
+-------------------------------------------------*/
+#team{
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top: 5%;
+	clear: both;
+}
+#team img{
+	width: 90%;
+	max-width: 217px;
+}
+#team .col{
+	width: 100%;
+	padding: 30px 3.15% 0;
+	float: left;	
+	text-align: center;
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
+}
+#team h4, #team h6{
+	text-align: left;
+	padding-left: 15%;
+}
+#team h4{
+	color: #E72348;
+	margin-top: 3%;
+	font-size: 1.1em;
+}
+#team h6{
+	color: #8BBAC7;
+	margin-top: 2%;
+	font-size: 0.85em;
+}
+#team .col p{
+	text-align: left;
+}
+#team .col:nth-child(even),
+#team .col:nth-child(odd){
+	clear: both;
+}
+#team p{ margin-bottom: 30px; }
+/*-------------------------------------------------
+Partners
+-------------------------------------------------*/
+#partners{
+	width: 93%;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top: 5%;
+	clear: both;
+}
+#partners img{
+	width: 80%;
+	max-width: 217px;
+	padding: 2%;
+	border: 1px solid white;
+}
+#partners .col{
+	width: 100%;
+	padding: 30px 3.15% 0;
+	float: left;	
+	text-align: left;
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
+}
+#partners h4, #partners h6{
+	text-align: left;
+	padding-left: 5%;
+}
+#partners h4{
+	color: #f7f7f7;
+	margin-top: 3%;
+	font-size: 1.1em;
+}
+#partners h6{
+	color: #E72348;
+	margin-top: 2%;
+	font-size: 0.85em;
+}
+#partners .col p{
+	text-align: left;
+	padding-left: 5%;
+}
+#partners .col:nth-child(even),
+#partners .col:nth-child(odd){
+	clear: both;
+}
+#partners p{ margin-bottom: 30px; }
+/*-------------------------------------------------
+Pagination
+-------------------------------------------------*/
+.navigation {
+	margin-top:30px;	
+	font-size:12px;
+	padding-left:5%;
+}
+.page-navigation {
+	margin: 20px 0px 20px -4px;		
+}
+.pagenavi {
+	margin: 0px 0px 0px 0px;
+	padding: 5px 1px 5px;
+	float:left;
+	width: 98%;
+}
+.pagenavi a {
+	padding: 5px 6px 4px 6px;
+	margin: 3px;
+	text-decoration: none;
+	color: #000 !important;
+	background-color: #f5f4f5;
+	font-weight:bold;
+}
+.pagenavi a:hover {
+    color: #fff !important;
+    background-color: #e92149;
+	text-decoration:none;
+}
+.pagenavi span.pages {
+	padding: 5px 6px 4px 6px;
+    margin: 3px;
+    color: #999;
+}
+.pagenavi span.current {
+    padding: 5px 6px 4px 6px;
+    margin: 3px;
+    font-weight:bold;
+    color: #fff;
+    background-color: #8bbac7;
+}
+.pagenavi span.expand {
+    padding: 5px 6px 4px 6px;
+    margin: 3px;
+    color: #444;
+    background-color: inherit;
+}
+.pagenavi .first, .pagenavi .last {
+}
+.pagenavi .single_page {
+}
+
+/*-------------------------------------------------
+FOOTER AREA ONE
+-------------------------------------------------*/
+/*-------------------------------------------------
+--testimonials --news 
+-------------------------------------------------*/
+footer .grid_4{
+width: 100%;
+}
+.testimonial, .newsfeed, .subscribe{
+padding: 10% 10% 10% 15%;
+
+}
+.testimonial h5, .newsfeed h5, .subscribe h5{
+color: white;
+font-size: 1.5em;
+margin-bottom: 30px;
+}
+.testimonial blockquote, .newsfeed article p{
+color: white;
+font-size: 0.75em;
+line-height: 1.5em;
+font-style: italic;
+margin: 20px 0 10px 0;
+}
+.newsfeed article p{
+font-style: normal;
+font-size: 0.75em;
+margin-top: 10px;
+}
+.testimonial cite{
+color: #E72348;
+}
+.newsfeed h6 a, 
+.newsfeed h6 a:visited, 
+.newsfeed h6 a:hover, 
+.newsfeed h6 a:active{
+cursor: pointer;
+color: #E72348;
+font-size: 1.1em;
+}
+.newsfeed h6 a:hover{
+text-decoration: underline;
+}
+/*-------------------------------------------------
+FOOTER AREA TWO -- see also nav styles
+-------------------------------------------------*/
+.footernav{
+}
+.footernav span{
+color: #E72348;
+font-size: 2em;
+line-height: 1.5em;
+padding: 0 0 0 10%;
+width: 90%;
+text-align: center;
+float: left;
+clear: both;
+}
+.grid_6.social_container{
+width: 100%;
+}
+.social{
+text-align: center;
+margin: 0 0 0 0;
+}
+.social a.facebook{
+background: url("../img/fb.gif") no-repeat scroll 0% 0% transparent;
+width: 47px;
+height: 47px;
+}
+.social a.linkedin{
+background: url("../img/li.gif") no-repeat scroll 0% 0% transparent;
+width: 50px;
+height: 47px;
+}
+.social a.twitter{
+background: url("../img/tw.gif") no-repeat scroll 0% 0% transparent;
+width: 60px;
+height: 47px;
+}
+.social a.facebook, .social a.twitter, .social a.linkedin{
+display: inline-block;
+text-indent: 100%;
+overflow: hidden;
+white-space: nowrap;
+margin-right: 2%;
+}
+
+/*-------------------------------------------------
+FORMS
+-------------------------------------------------*/
+.email{
+width: 90%;
+padding: 5%;
+}
+.btn {
+   font-size: 1em;
+   background-color: #E72348;
+   padding: 7px 20px;
+   margin: 10% 0;
+   display: inline-block;
+   color: #fff;
+   border: none;
+   cursor: pointer;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+.btn:hover {
+   color: #333;
+}
+
+/* ==========================================================================
+  Media Queries min width 500px
+  ========================================================================== */
+@media only screen and (min-width : 500px) {
+/*-------------------------------------------------
+opportunity page
+-------------------------------------------------*/
+.single_opp .grid_2{
+	float: right;
+	width: 15%;
+}
+/*-------------------------------------------------
+team page
+-------------------------------------------------*/
+#team .col{
+	width: 40%;
+}
+#team .col:nth-child(1){ margin-left: 0%;}
+#team .col:nth-child(2){ margin-left: 0%;}
+#team .col:nth-child(3){ left: 0;}
+#team .col:nth-child(even){
+	clear: right;
+}
+}
+/* ==========================================================================
+  Media Queries min width 600px
+  ========================================================================== */
+@media only screen and (min-width : 600px) {
+hgroup{
+position: relative;
+}
+/*-------------------------------------------------
+--LOGO
+-------------------------------------------------*/
+
+.grid_4.logo_container{
+width: 31.428571428%;
+}
+/* ------------------------------------------------
+--NAVIGATION
+-------------------------------------------------*/
+nav ul{margin: 0; padding: 0;}
+nav a{
+text-decoration: none;
+font-family: Helvetica;
+font-weight: bold;
+}
+
+/*-------------------------------------------------
+----top nav (nav_top)
+-------------------------------------------------*/
+.nav_top.grid_8{
+width: 65.714285714%;
+}
+.nav_top.grid_8 nav{min-width: 90%;}
+.nav_top nav, .nav_sub nav{
+float: right;
+}
+.nav_top nav a:hover{
+background-color: #E72348;	
+}
+/*-------------------------------------------------
+----secondary nav (nav_sub) --footer nav (footernav)
+-------------------------------------------------*/
+.footernav nav a{
+width: 33.33333333333333%;
+border-right: 1px solid #333;
+}
+.footernav nav ul li:nth-child(3) a{
+border-right: none;
+}
+.footernav nav ul li:nth-child(6) a{
+border-right: none;
+}
+}
+
+
+
+/* ==========================================================================
+  Media Queries min width 700px
+  ========================================================================== */
+@media only screen and (min-width : 700px) {
+#banner .grid_6{
+width: 48.571428571%;
+}
+#banner{
+text-align:left;
+}
+#banner-info h1{
+font-size: 2.75em;
+line-height: 1.25em;
+margin-top: 40px;
+margin-left: 10%;
+}
+#banner-info p{
+font-size: 1.5em;
+line-height: 1.5em;
+margin-left: 10%;
+color: #ddd;
+}
+/*-------------------------------------------------
+NAVIGATION - resp_nav
+-------------------------------------------------*/
+#resp_nav{
+	width: 100%;
+	text-align: right;
+	padding: 5px 0;
+	background-color: #fff;
+	height: 30px;
+}
+	#resp_nav > a, #resp_nav:target > a:last-of-type{
+		display: none;
+	}
+	#resp_nav:not( :target ) > a:first-of-type,
+	#resp_nav:target > a:last-of-type{
+		display: none;
+	}
+	#resp_nav li{
+		position: relative;
+	}
+	/* first level */
+	#resp_nav > ul{
+		height: 1.75em;
+		width: 100%;
+		background-color: #fff;
+		display: block;
+	}
+		#resp_nav > ul > li{
+			width: auto;
+			height: 100%;
+			display: inline-block;
+			float: none;
+			text-align: center;
+		}
+		#resp_nav > ul > li > a{
+			display: block;
+			height: 100%;
+			font-size: 1em;
+			line-height: 2em;
+			text-align: center;
+			padding: 0 10px;
+			
+		}
+		#resp_nav > ul > li:not(:last-child) > a{
+			border-right: 1px #444 solid;
+		}
+	/* second level */
+#resp_nav li ul{
+	position: absolute;
+
+}
+	#resp_nav li > ul > li > a{
+		text-align: left;
+	}
+/*-------------------------------------------------
+MAIN CONTENT AREA
+-------------------------------------------------*/
+.content .grid_4{
+width: 48.571428571%;
+border-top: none;
+padding: 0 0;
+}
+.content .grid_4.three, .seeking .grid_4{
+width: 100%;
+}	
+.content .grid_4.one p{
+border-right: 1px solid white;
+}
+.seeking .grid_4.one p{
+border-right: none;
+}
+.content .grid_4.two{
+margin-right: 0;
+}
+/*-------------------------------------------------
+events & news pages
+-------------------------------------------------*/
+.event, .news{
+width: 70%;
+margin: 3% 0 0 5%;
+overflow: auto;
+border-bottom: 1px #f7f7f7 solid;
+}
+.event h6, .news h6{
+margin: 0 0 1% 0;
+color: #8BBAC7;
+font-weight: bold;
+font-size: 0.85em;
+}
+.event span.date, .news span.date{
+color: #E72348;
+margin:0 0 1% 0;
+font-weight: bold;
+font-size: 0.85em;
+}
+.event_content.grid_6, .news_content.grid_6{
+width: 48.571428571%;
+}
+.event .event_content p, .news .news_content p{
+margin: 0;
+padding: 0;
+line-height: 1.25em;
+margin-top: 2%;
+}
+.event_image, .news_image{
+text-align: right;
+min-width: 140px;
+}
+.event_image img, .news_image img{
+max-width: 120px;
+display: inline-block;
+}
+/*-------------------------------------------------
+single event & news page
+-------------------------------------------------*/
+.single_event .grid_4{
+	margin-top: 15%;
+}
+.single_event p{
+	border-right: none;
+}
+.single_event .grid_8{
+	margin-top: 120px;
+	width: 50%;
+}
+.single_event .grid_8 img{
+	width: 30%;
+	padding: 2%;
+}
+.single_event{
+	position: relative;
+}
+.single_event .grid_2 a{
+	position: absolute;
+	top: 5%;
+	right: 5%;
+}
+/*-------------------------------------------------
+FOOTER AREA ONE
+-------------------------------------------------*/
+/*-------------------------------------------------
+--testimonials --news 
+-------------------------------------------------*/
+footer .grid_4.one,
+footer .grid_4.two{
+width: 48.571428571%;
+}
+
+/*-------------------------------------------------
+FOOTER AREA TWO -- see also nav styles
+-------------------------------------------------*/
+.footernav{
+padding-bottom: 60px;
+}
+.footernav span{
+text-align: left;
+float: left;
+clear: both;
+}
+.grid_6.footernav,
+.grid_6.social_container{
+width: 48.571428571%;
+
+}
+.social{
+text-align: center;
+margin: 0 0 0 0;
+}
+
+/*-------------------------------------------------
+FORMS
+-------------------------------------------------*/	
+}
+
+
+
+/* ==========================================================================
+  Media Queries min width 850px
+  ========================================================================== */ 
+@media only screen and (min-width : 850px) {
+
+/*-------------------------------------------------
+MAIN CONTENT AREA
+-------------------------------------------------*/
+.content .grid_4, .content .grid_4.three{
+width: 31.428571428%;
+border-top: none;
+}
+.seeking .grid_8{
+width: 65.714285714%;
+border-top: none;
+}
+.content .grid_4.one p{
+border-right: 1px solid white;
+}
+
+.content .grid_4.three img{
+margin-left: 0;
+
+}
+/*-------------------------------------------------
+team page
+-------------------------------------------------*/
+#team .col{
+	width: 33%;
+	clear: none;
+	padding: 0;
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
+
+}
+#team .col:nth-child(1){ margin-left: 0%; }
+#team .col:nth-child(2){ margin-left: 0%; }
+#team .col:nth-child(3){ left: 0; }
+#team .col:nth-child(even),
+#team .col:nth-child(odd){
+	clear: none;
+}
+#team .col:nth-child(3n+4){ clear: left; }
+
+/*-------------------------------------------------
+partners page
+-------------------------------------------------*/
+#partners .col{
+	width: 25%;
+	clear: none;
+	padding: 0;
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
+
+}
+#partners .col:nth-child(1){ margin-left: 0%; }
+#partners .col:nth-child(2){ margin-left: 0%; }
+#partners .col:nth-child(3){ left: 0; }
+#partners .col:nth-child(even),
+#partners .col:nth-child(odd){
+	clear: none;
+}
+#partners .col:nth-child(4n+5){ clear: left; }
+/*-------------------------------------------------
+single_event single_news page
+-------------------------------------------------*/
+.single_event .grid_4{
+	width: 48.571428571%;
+}
+/*-------------------------------------------------
+FOOTER AREA ONE
+-------------------------------------------------*/
+/*-------------------------------------------------
+--testimonials --news 
+-------------------------------------------------*/
+footer .grid_4.one,
+footer .grid_4.two,
+footer .grid_4.three{
+width: 31.428571428%;
+}
+}
+/* ==========================================================================
+  Media Queries min width 1000px
+  ========================================================================== */ 
+@media only screen and (min-width : 1000px) {
+
+hgroup{
+position: relative;
+overflow: visible;
+}
+/*-------------------------------------------------
+--LOGO
+-------------------------------------------------*/
+hgroup img.logo{
+position: absolute;
+top: 50px;
+left: 30px;
+width: 220px;
+max-width: 30%;
+z-index: 999999999;
+}
+/* ------------------------------------------------
+--NAVIGATION
+-------------------------------------------------*/
+/*-------------------------------------------------
+----top nav (nav_top)
+-------------------------------------------------*/
+.nav_top.grid_8 nav {min-width: 50%;}
+
+nav ul li{
+float: left;
+}
+.nav_top nav{
+width: auto;
+bottom: 0;
+right: 0;
+padding: 0;
+position: absolute;
+float: right;
+}
+.nav_top nav,{
+margin-right: 3%;
+
+}
+.nav_top nav ul li:nth-child(odd) a{margin-left: 5px; margin-right: 0;}
+.nav_top nav ul li:nth-child(even) a{margin-left: 5px;}	
+.nav_top nav ul li a{
+width: auto;
+max-width: 150px;
+height: auto;
+min-height: 50px;
+padding: 10px 15px 0 15px;
+margin: 0;
+-webkit-border-top-right-radius: 10px;
+-moz-border-top-right-radius: 10px;
+border-top-right-radius: 10px;
+-webkit-border-bottom-left-radius: 0;
+-moz-border-bottom-left-radius: 0;
+border-bottom-left-radius: 0;
+font-weight: normal;
+float: left;
+}
+/*-------------------------------------------------
+----secondary nav (nav_sub) --footer nav (footernav)
+-------------------------------------------------*/
+/*.nav_sub nav{
+float: right;
+width: auto;
+padding: 10px 0
+}*/
+.footernav nav{
+margin-left: 8%;
+}
+.footernav nav a{
+width: auto;
+padding: 0 10px;
+line-height: 20px;
+}
+.footernav nav ul li:nth-child(odd) a, .footernav nav ul li a, .footernav nav ul li:nth-child(6) a{
+border-right: solid 1px #222;
+}
+.footernav nav ul li:nth-child(8) a{
+border-right: none;
+}
+
+/*-------------------------------------------------
+--MAIN CONTENT 
+-------------------------------------------------*/	
+/*-------------------------------------------------
+---- opportunities
+-------------------------------------------------*/	
+.content.ops .grid_8{
+border-left: 1px solid #f7f7f7;
+padding: 0;
+margin-top: 9%;
+}
+.content.ops .grid_4 p{border-right: none;}
+}
