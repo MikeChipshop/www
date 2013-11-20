@@ -422,6 +422,8 @@ background-color: #f7f7f7;
 -moz-border-radius: 15px;
 border-radius: 15px;
 margin-bottom: 0;
+border: 1px solid rgb(70,70,70);
+background-color: rgb(40,40,40);
 }
 .single_opp .grid_2{
 	float: right;
@@ -448,15 +450,19 @@ margin-left: 5%;
 .single_opp h6{
 margin-left: 5%;
 margin-top: 15px;
-color: #333;
+color: #8BBAC7;
 font-weight: bold;
 font-size: 0.8em;	
 }
 .single_opp p{
 padding: 5px 5% 2% 5%;
 margin: 0;
-color: #666;
+color: #f7f7f7;
 }
+.single_opp .disclaimer h6, .single_opp .disclaimer p{
+font-size: 0.7em;
+}
+
 /*-------------------------------------------------
 investors page
 -------------------------------------------------*/
