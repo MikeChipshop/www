@@ -523,7 +523,7 @@ single event page, single news page
 	padding: 5%;
 }
 .single_event h6{
-	padding: 0 0 0 15%;
+	padding: 0 0 0 10%;
 }
 .single_event .grid_2{
 	width: 100%;
@@ -1067,8 +1067,9 @@ single event & news page
 .single_event .grid_4{
 	margin-top: 15%;
 }
-.single_event p{
+.single_event .grid_4 p{
 	border-right: none;
+	padding-left: 10%;
 }
 .single_event .grid_8{
 	margin-top: 120px;
