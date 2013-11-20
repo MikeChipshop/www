@@ -418,13 +418,13 @@ text-decoration: underline;
 single opportunity page
 -------------------------------------------------*/
 .single_opp .grid_10{
-background-color: #f7f7f7;
 -webkit-border-radius: 15px;
 -moz-border-radius: 15px;
 border-radius: 15px;
 margin-bottom: 0;
-border: 1px solid rgb(70,70,70);
-background-color: rgb(40,40,40);
+}
+.single_opp .grid_10.disclaimer{
+	border: none;
 }
 .single_opp .grid_2{
 	float: right;
@@ -438,30 +438,34 @@ font-size: 0.75em;
 font-weight: bold;
 }
 .single_opp img{
-margin: 3% 3% 1% 4%;
+margin: 3% 3% 1% 5%;
 padding: 1% 1% 1% 1%;
 width: 50%;
 max-width: 150px;
-border: 1px solid #666;
 float: left;
+background-color: white;
 }
 .single_opp h5{
 margin-left: 5%;
 }
 .single_opp h6{
 margin-left: 5%;
-margin-top: 15px;
+margin-top: 10px;
 color: #8BBAC7;
 font-weight: bold;
 font-size: 0.8em;	
 }
 .single_opp p{
-padding: 5px 5% 2% 5%;
+padding: 15px 5% 2% 5%;
 margin: 0;
 color: #f7f7f7;
 }
-.single_opp .disclaimer h6, .single_opp .disclaimer p{
+.single_opp .disclaimer h6{
 font-size: 0.7em;
+}
+.single_opp .disclaimer p{
+font-size: 0.7em;
+color: #999;
 }
 
 /*-------------------------------------------------
