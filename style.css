@@ -971,10 +971,11 @@ NAVIGATION - resp_nav
 	}
 	/* first level */
 	#resp_nav > ul{
-		height: 1.75em;
+		height: 1em;
 		width: 100%;
 		background-color: #fff;
 		display: block;
+		margin-top: 0.5em;
 	}
 		#resp_nav > ul > li{
 			width: auto;
@@ -987,7 +988,7 @@ NAVIGATION - resp_nav
 			display: block;
 			height: 100%;
 			font-size: 1em;
-			line-height: 2em;
+			line-height: 1em;
 			text-align: center;
 			padding: 0 10px;
 			
