@@ -1083,8 +1083,8 @@ single event & news page
 	width: 50%;
 }
 .single_event .grid_8 img{
-	width: 30%;
-	padding: 2%;
+	width: 45%;
+	padding: 4% 10%;
 }
 .single_event{
 	position: relative;
