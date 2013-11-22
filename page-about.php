@@ -38,7 +38,7 @@
                         <?php if (get_field('about_image')){?>
                          <img src="<?php echo $image[0]; ?>" />
                         <?php } else {?>
-                        	<img src="<?php bloginfo( 'template_directory' ); ?>/img/no_image.jpg" width="149px" height="138px" alt="<?php bloginfo( 'name' ); ?> Placeholder" title="<?php bloginfo( 'name' ); ?> Placeholder" />
+                        	<img src="<?php bloginfo( 'template_directory' ); ?>/img/no_image.jpg" alt="<?php bloginfo( 'name' ); ?> Placeholder" title="<?php bloginfo( 'name' ); ?> Placeholder" />
                         <?php } ?>
 			</div>
 			</div>
