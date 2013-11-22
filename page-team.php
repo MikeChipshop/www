@@ -24,7 +24,11 @@
 					$size = "board-members";
 					$image = wp_get_attachment_image_src( $attachment_id, $size );
 				?>
+                <?php if (get_sub_field('team_member_photo')){?>
                 <img src="<?php echo $image[0]; ?>" />
+                <?php } else {?>
+                        	<img src="<?php bloginfo( 'template_directory' ); ?>/img/no_image.jpg" alt="<?php bloginfo( 'name' ); ?> Placeholder" height="316" title="<?php bloginfo( 'name' ); ?> Placeholder" />
+                        <?php } ?>
 				<h4><?php the_sub_field('team_member_name'); ?></h4>
 				<h6><?php the_sub_field('team_member_job_title'); ?></h6>
 				<h6><?php the_sub_field('team_member_email'); ?></h6>
