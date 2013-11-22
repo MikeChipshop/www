@@ -29,12 +29,17 @@
 						<h5><?php the_field('about_column_title'); ?></h5>
 						<?php the_field('about_column_two'); ?>
 					</div>
+                   
 					<div class=" grid_4 omega three clearfix"><?php 
 						$attachment_id = get_field('about_image');
 						$size = "board-members";
 						$image = wp_get_attachment_image_src( $attachment_id, $size );
 						?>
-						<img src="<?php echo $image[0]; ?>" />
+                        <?php if (get_field('about_image')){?>
+                         <img src="<?php echo $image[0]; ?>" />
+                        <?php } else {?>
+                        	<img src="<?php bloginfo( 'template_directory' ); ?>/img/no_image.jpg" width="149px" height="138px" alt="<?php bloginfo( 'name' ); ?> Placeholder" title="<?php bloginfo( 'name' ); ?> Placeholder" />
+                        <?php } ?>
 			</div>
 			</div>
 
