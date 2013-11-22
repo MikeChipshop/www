@@ -29,8 +29,12 @@
 						<h5><?php the_field('about_column_title'); ?></h5>
 						<?php the_field('about_column_two'); ?>
 					</div>
-					<div class=" grid_4 omega three clearfix"><img src="img/about_diagram.gif"></div>
-
+					<div class=" grid_4 omega three clearfix"><?php 
+						$attachment_id = get_field('about_image');
+						$size = "board-members";
+						$image = wp_get_attachment_image_src( $attachment_id, $size );
+						?>
+						<img src="<?php echo $image[0]; ?>" />
 			</div>
 			</div>
 
