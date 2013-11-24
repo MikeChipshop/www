@@ -25,7 +25,11 @@
 									$size = "board-members";
 									$image = wp_get_attachment_image_src( $attachment_id, $size );
 								?>
-								<img src="<?php echo $image[0]; ?>" />
+                                <?php if (get_sub_field('board_member_photo')){?>
+									<img src="<?php echo $image[0]; ?>" />
+                                <?php } else {?>
+                        			<img src="<?php bloginfo( 'template_directory' ); ?>/img/no-image-large.jpg" alt="<?php bloginfo( 'name' ); ?> Placeholder" height="316" title="<?php bloginfo( 'name' ); ?> Placeholder" />
+                        		<?php } ?>
 								<h4><?php the_sub_field('board_member_name'); ?></h4>
 								<p><?php the_sub_field('board_member_biog'); ?></p>
 							</div>
