@@ -863,6 +863,9 @@ padding: 5%;
 -moz-border-radius: 10px;
 border-radius: 10px;
 }
+.contact .btn{
+	margin-top:0;
+}
 .btn:hover {
    color: #333;
 }
