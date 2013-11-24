@@ -15,10 +15,16 @@
         	<?php endwhile; ?>
 		<?php }; ?>
 		<div class=" grid_8 omega">
-			<img src="img/no_image.jpg">
-            <img src="img/no_image.jpg">
-            <img src="img/no_image.jpg">
-            <img src="img/no_image.jpg">
+        	<?php if(get_field('image')): $rcount = 1; ?>
+				<?php while(has_sub_field('image')): ?>
+					<?php 
+						$attachment_id = get_sub_field('image_item');
+						$size = "board-members";
+						$image = wp_get_attachment_image_src( $attachment_id, $size );
+					?>
+                	<img src="<?php echo $image[0]; ?>" class="single-news-image-<?php echo $rcount; ?>" />
+            	<?php $rcount++; endwhile;?>
+			<?php endif; ?>
 		</div>
 		<div class="grid_2 omega">
 			<a href="news/">Back</a>	
