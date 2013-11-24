@@ -36,8 +36,22 @@ if ( has_post_thumbnail() ) the_post_thumbnail('full-size');
         	<?php the_field('secondary_content'); ?>
       	</div>
         <div class=" grid_4 omega three clearfix">
-            <img src="<?php bloginfo( 'template_directory' ); ?>/img/test.jpg">
-            <img src="<?php bloginfo( 'template_directory' ); ?>/img/test.jpg">
+            <?php 
+				$attachment_id_1 = get_field('image_one');
+				$size_1 = "board-members";
+				$image_1 = wp_get_attachment_image_src( $attachment_id_1, $size_1 );
+			?>
+            <?php if (get_field('image_one')){?>
+				<img src="<?php echo $image_1[0]; ?>" />
+            <?php }; ?>
+            <?php 
+				$attachment_id_2 = get_field('image_two');
+				$size_2 = "board-members";
+				$image_2 = wp_get_attachment_image_src( $attachment_id_2, $size_2 );
+			?>
+            <?php if (get_field('image_two')){?>
+				<img src="<?php echo $image_2[0]; ?>" />
+            <?php }; ?>
         </div>
 	</div>
 </div>
