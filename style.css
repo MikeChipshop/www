@@ -554,9 +554,7 @@ contact page
 .content.contact h6{
 padding: 0;
 font-weight: bold;
-}
-.content.contact h6{
-margin-top: 2%;
+margin: 1em  0;
 }
 .content.contact .grid_5{
 	width: 100%;
@@ -564,6 +562,14 @@ margin-top: 2%;
 .content.contact form{
 width: 90%;
 max-width: 400px;
+margin-top: 50px;
+}
+.contact form td{
+	padding: 0.5em 0;
+}
+.contact form td input{
+	height: 2em;
+	padding: 5px;
 }
 .contact form th{
 vertical-align: middle;
@@ -572,7 +578,7 @@ vertical-align: middle;
 color: white;
 }
 .content address{
-line-height: 1.5em;
+line-height: 1.7em;
 font-size: 0.75em;
 }
 .content.contact p{
