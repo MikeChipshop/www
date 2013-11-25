@@ -16,12 +16,10 @@
                 <?php the_field('head_office_address');?>
             </address>
             <h6>Office Opening Times:</h6>
-            <p>Mon to Fri - 0900 to 1700</p>
-            <p>Saturday - CLOSED</p>
-            <p>Sunday - CLOSED</p>
-            <p class="pushup_two">Tel. 01603 510087</p>
-            <p>Email: <span>hello@newangliacapital.co.uk</span></p>
-            <p>Twitter: <a href="#">@newangliainvestment</a></p>
+            <p><?php the_field('opening_times');?></p>
+            <p class="pushup_two">Tel: <?php the_field('telephone','option');?></p>
+            <p>Email: <span><?php the_field('email','option');?></span></p>
+            <p>Twitter: <a href="<?php the_field('twitter_link','option');?>">@<?php the_field('twitter_handle','option');?></a></p>
             <div  class="grid_5">
 				<?php echo do_shortcode("[contact-form-7 id='139' title='Contact form 1']");?>
             </div>
