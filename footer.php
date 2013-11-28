@@ -55,10 +55,7 @@ $newpost_query->the_post();
 <div class=" grid_4 omega three clearfix">
 <div class="subscribe clearfix">
 <h5>Stay upto date</h5>
-<form>
-<input type="email" class="email" value="Enter your email address">
-<input type="submit" class="btn" value="Submit">
-</form>
+<?php echo do_shortcode("[mc4wp_form]") ?>
 
 </div>
 </div>
