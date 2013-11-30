@@ -11,23 +11,41 @@
 						
 						
 						
-						<div class=""><img src="img/nac-logo.png"></div>
+						<div class="">
+                        	<?php $attachment_id = get_field('company_logo');
+									$size = "featured-thumb";
+									$image = wp_get_attachment_image_src( $attachment_id, $size );
+								?>
+                                <?php if (get_field('company_logo')){?>
+									<img src="<?php echo $image[0]; ?>" />
+                                <?php } else {?>
+                        			<img src="<?php bloginfo( 'template_directory' ); ?>/img/no-image-large.jpg" alt="<?php bloginfo( 'name' ); ?> Placeholder" title="<?php bloginfo( 'name' ); ?> Placeholder" />
+                        		<?php } ?>
+                        </div>
 						<div class="grid_2 omega">
 							<a href="#">Back</a>	
 						</div>
 						<div class="clearfix"></div>
 						<h5><?php the_title(); ?></h5>
-						<h6>Location - Norwich</h6>
-						<h6>Investment needed - &pound;50,000</h6>
-						<h6>Equity offered - 50%</h6>
+						<?php if (get_field('investment_location')) {?><h6>Location - <?php the_field('investment_location'); ?></h6><?php } ?>
+						<?php if (get_field('investment_required')) {?><h6>Investment needed - &pound;<?php the_field('investment_required'); ?></h6><?php } ?>
+						<?php if (get_field('equity_offered')) {?><h6>Equity offered - <?php the_field('equity_offered'); ?></h6><?php } ?>
+                        <?php if (get_field('investment_contact')) {?><h6>Investment contact email - <?php the_field('investment_contact'); ?></h6><?php } ?>
 						
-						<div class="grid_12 omega"><p>dlskf slkdfjhsd flkj sdf ksdh sdkj fh sd hjf sf lskf slkdfjhsd flkj sdf ksdh sdkj fh sd hjf sflskf slkdfjhsd flkj sdf ksdh sdkj fh sd hjf sflskf slkdfjhsd flkj sdf ksdh sdkj fh sd hjf sf </p></div>
-
+						<div class="grid_12 omega"><?php the_content(); ?></div>
+                        <?php if (get_field('company_profile')) {?>
+                        <div class="grid_12 omega">
+                        	<h6>Company Profile</h6>
+                        	<?php the_field('company_profile'); ?>
+                        </div>
+						<?php } ?>
+                        <?php if (get_field('attach_pdf')) {?><h6 class="pdf-attach"><a href="<?php the_field('attach_pdf'); ?>">Click here to download the PDF</a></h6><?php } ?>
+						
 						
 					</div>
 					<div class="grid_10 push_1">
-						<h6>Disclaimer</h6>
-						<p>Disclaimer will go here efkjh weoierfiuohdf ds uiui dsf hiusd dsu hfuer hfdh snc   d  oijoirh oi siw9i iwd9 ifoic i</p>
+						
+						<?php if (get_field('investment_disclaimer')) {?><h6>Disclaimer</h6><p><?php the_field('investment_disclaimer'); } ?></p>
 					</div>
 			</div>
 			</div>
