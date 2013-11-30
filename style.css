@@ -367,6 +367,12 @@ font-size: 1.1em;
 font-weight: bold;
 padding-top: 2%;
 }
+h6.pdf-attach a {
+	color:#fff!important;
+	background:url(img/pdf-icon.png);	
+	background-repeat:no-repeat;
+	padding-left:30px;
+}
 /*-------------------------------------------------
 opportunities page
 -------------------------------------------------*/
