@@ -772,6 +772,12 @@ color: white;
 font-size: 1.5em;
 margin-bottom: 30px;
 }
+.mc4wp-success {
+	color:#8bbac7;
+}
+.mc4wp-error {
+	color:#e92149;	
+}
 .testimonial blockquote, .newsfeed article p{
 color: white;
 font-size: 0.75em;
