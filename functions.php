@@ -498,6 +498,3 @@ return $html; }
 /***************************************************/
 
 register_options_page('Global');
-register_options_page('Home Page');
-register_options_page('Slider');
-register_options_page('Insurers');
