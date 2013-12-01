@@ -112,9 +112,9 @@ font-weight: bold;
 .nav_top.grid_8{
 width: 100%;
 }
-.nav_top.grid_8 ul{
+/*.nav_top.grid_8 ul{
 float:right;
-}
+}*/
 .nav_top nav{
 padding-bottom: 21px;
 }
@@ -1291,7 +1291,7 @@ z-index: 999999999;
 /*-------------------------------------------------
 ----top nav (nav_top)
 -------------------------------------------------*/
-.nav_top.grid_8 nav {min-width: 50%;}
+.nav_top.grid_8 nav {min-width: 0;}
 
 nav ul li{
 float: left;
