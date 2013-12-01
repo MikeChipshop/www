@@ -112,6 +112,9 @@ font-weight: bold;
 .nav_top.grid_8{
 width: 100%;
 }
+.nav_top.grid_8 ul{
+float:right;
+}
 .nav_top nav{
 padding-bottom: 21px;
 }
@@ -1184,6 +1187,7 @@ FORMS
   Media Queries min width 850px
   ========================================================================== */ 
 @media only screen and (min-width : 850px) {
+
 
 /*-------------------------------------------------
 MAIN CONTENT AREA
