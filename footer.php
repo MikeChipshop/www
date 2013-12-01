@@ -68,7 +68,7 @@ $newpost_query->the_post();
 <div class="grid_6 footernav">
 <nav>
     <ul>
-    	<?php wp_nav_menu( array('menu' => 'Footer Menu' )); ?>
+    	<?php wp_nav_menu( array('menu' => 'Footer Menu','container' => false )); ?>
     </ul>
 </nav>
 <span><?php the_field('telephone','option'); ?></span>
