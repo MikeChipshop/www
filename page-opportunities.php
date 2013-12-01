@@ -27,7 +27,7 @@
     $the_query = new WP_Query( array( 
         'post_type' => 'investments',
         'paged' => $paged,
-        'posts_per_page' => 1) 
+        'posts_per_page' => 6) 
     );
 	
     while ( $the_query->have_posts() ) : $the_query->the_post(); { ?>
