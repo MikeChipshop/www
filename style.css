@@ -755,9 +755,29 @@ Pagination
     color: #444;
     background-color: inherit;
 }
-.pagenavi .first, .pagenavi .last {
+/* CPT PAgination */
+
+.pagination-links {
+	clear:both;	
+	margin-left:10%;
+	width:80%;
 }
-.pagenavi .single_page {
+.pagination-links-left,
+.pagination-links-right {
+	float:left;
+	
+}
+.pagination-links-left a,
+.pagination-links-right a {
+	font-weight:normal;
+	color:#fff;
+	background-color: #8bbac7;
+	padding: 5px;
+	margin-right:10px;
+}
+.pagination-links-left a:hover,
+.pagination-links-right a:hover {
+	background-color: #e92149;
 }
 
 /*-------------------------------------------------

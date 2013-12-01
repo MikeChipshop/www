@@ -21,18 +21,18 @@
 			<?php endwhile; ?>
         <?php }; ?>
 		<div class=" grid_8 omega two clearfix">
-			<?php 
-				$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-				$args = array(
-				'post_type' => 'investments',
-					'posts_per_page' => 1,
-					'paged' => $paged,
-				);
-				$newpost_query = new WP_Query( $args );
-				if ( $newpost_query->have_posts() ) :
-				while ( $newpost_query->have_posts() ) : 
-				$newpost_query->the_post(); 
-			?>
+        	<!-- -->
+            	<?php $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1; // setup pagination
+
+    $the_query = new WP_Query( array( 
+        'post_type' => 'investments',
+        'paged' => $paged,
+        'posts_per_page' => 1) 
+    );
+	
+    while ( $the_query->have_posts() ) : $the_query->the_post(); { ?>
+            <!-- -->
+			
 			<div  id="post-<?php the_ID(); ?>" <?php post_class('opportunity'); ?>>
 				<div class="opportunity_container">
 					<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
@@ -54,16 +54,12 @@
 					</div>
 				</div>
 			</div>
-            <?php endwhile; ?>
-            <!-- Navigation -->
-            
-            <!-- End -->
-            
-            <div class="navigation"><?php if(function_exists('pagenavi')) { pagenavi(); } ?></div>
-			<?php wp_reset_postdata();?>
-            <?php else:  ?>
-  				<p>Sorry, no posts matched your criteria.</p>
-			<?php endif; ?>
+            <?php } endwhile; ?>
+			<nav class="pagination-links clearfix">
+                <div class="pagination-links-left"><?php echo get_previous_posts_link('&laquo; View previous', $the_query->max_num_pages)?></div>
+    			<div class="pagination-links-right"><?php echo get_next_posts_link('View more &raquo;', $the_query->max_num_pages) ?></div>
+    		</nav>
+			<?php wp_reset_postdata(); ?>
 		</div>
 	</div>
 </div>
