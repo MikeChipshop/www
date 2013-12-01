@@ -30,8 +30,16 @@
 			<p></p>
 		</div>
 		<div class=" grid_4 omega three clearfix">
-			<img src="img/scour_mat.jpg">
-			<img src="img/scour_prevention.jpg">
+			<?php if(get_field('sidebar_images')): $rcount = 1; ?>
+				<?php while(has_sub_field('sidebar_images')): ?>
+					<?php 
+						$attachment_id = get_sub_field('sidebar_image');
+						$size = "board-members";
+						$image = wp_get_attachment_image_src( $attachment_id, $size );
+					?>
+                	<img src="<?php echo $image[0]; ?>">
+            	<?php $rcount++; endwhile;?>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>
