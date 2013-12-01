@@ -856,17 +856,17 @@ text-align: center;
 margin: 0 0 0 0;
 }
 .social a.facebook{
-background: url("../img/fb.gif") no-repeat scroll 0% 0% transparent;
+background: url("img/fb.gif") no-repeat scroll 0% 0% transparent;
 width: 47px;
 height: 47px;
 }
 .social a.linkedin{
-background: url("../img/li.gif") no-repeat scroll 0% 0% transparent;
+background: url("img/li.gif") no-repeat scroll 0% 0% transparent;
 width: 50px;
 height: 47px;
 }
 .social a.twitter{
-background: url("../img/tw.gif") no-repeat scroll 0% 0% transparent;
+background: url("img/tw.gif") no-repeat scroll 0% 0% transparent;
 width: 60px;
 height: 47px;
 }
