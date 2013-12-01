@@ -24,7 +24,7 @@
 <div class="nav_top grid_8">
 <nav>
 <ul>
-<?php wp_nav_menu( array('menu' => 'Main Navigation Menu' )); ?>
+<?php wp_nav_menu( array('menu' => 'Main Navigation Menu','container' => false )); ?>
 </ul>
 </nav>
 </div>
@@ -40,7 +40,7 @@
 <nav id="resp_nav" role="navigation">
 						<a href="#resp_nav" title="Show navigation">Show navigation</a>
     					<a href="#" title="Hide navigation">Hide navigation</a>
-<?php wp_nav_menu( array('menu' => 'Sub Menu','container' => false )); ?>
+<ul><?php wp_nav_menu( array('menu' => 'Sub Menu','container' => false )); ?></ul>
 </nav>
 </div>
 </div>
